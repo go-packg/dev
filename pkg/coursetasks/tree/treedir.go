@@ -79,7 +79,7 @@ func recursionPrintService(prependingString string, output io.Writer, currDir st
     }
 }
 
-func DirTree1(output io.Writer, currDir string, printFiles bool) error {
+func DirTreeSimple(output io.Writer, currDir string, printFiles bool) error {
 		dirTreeLocal(output, currDir, printFiles)
 		return nil
 }
