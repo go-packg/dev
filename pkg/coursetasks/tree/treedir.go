@@ -11,11 +11,11 @@ import (
 )
 
 func DirTree(output io.Writer, currDir string, printFiles bool) error {
-    recursionPrintService("", output, currDir, printFiles)
+    recursDir("", output, currDir, printFiles)
     return nil
 }
 
-func recursionPrintService(prependingString string, output io.Writer, currDir string, printFiles bool) {
+func recursDir(inputDir string, output io.Writer, currDir string, printFiles bool) {
     fileObj, err := os.Open(currDir)
     defer fileObj.Close()
     if err != nil {
@@ -53,26 +53,26 @@ func recursionPrintService(prependingString string, output io.Writer, currDir st
         if file.IsDir() {
             var stringPrepender string
             if length > i+1 {
-                fmt.Fprintf(output, prependingString+"├───"+"%s\n", file.Name())
-                stringPrepender = prependingString + "│\t"
+                fmt.Fprintf(output, inputDir+"├───"+"%s\n", file.Name())
+                stringPrepender = inputDir + "│\t"
             } else {
-                fmt.Fprintf(output, prependingString+"└───"+"%s\n", file.Name())
-                stringPrepender = prependingString + "\t"
+                fmt.Fprintf(output, inputDir+"└───"+"%s\n", file.Name())
+                stringPrepender = inputDir + "\t"
             }
             newDir := filepath.Join(currDir, file.Name())
-            recursionPrintService(stringPrepender, output, newDir, printFiles)
+            recursDir(stringPrepender, output, newDir, printFiles)
         } else if printFiles {
             if file.Size() > 0 {
                 if length > i+1 {
-                    fmt.Fprintf(output, prependingString+"├───%s (%vb)\n", file.Name(), file.Size())
+                    fmt.Fprintf(output, inputDir + "├───%s (%vb)\n", file.Name(), file.Size())
                 } else {
-                    fmt.Fprintf(output, prependingString+"└───%s (%vb)\n", file.Name(), file.Size())
+                    fmt.Fprintf(output, inputDir + "└───%s (%vb)\n", file.Name(), file.Size())
                 }
             } else {
-                if length > i+1 {
-                    fmt.Fprintf(output, prependingString+"├───%s (empty)\n", file.Name())
+                if length > i + 1 {
+                    fmt.Fprintf(output, inputDir + "├───%s (empty)\n", file.Name())
                 } else {
-                    fmt.Fprintf(output, prependingString+"└───%s (empty)\n", file.Name())
+                    fmt.Fprintf(output, inputDir + "└───%s (empty)\n", file.Name())
                 }
             }
         }
