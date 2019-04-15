@@ -1,19 +1,18 @@
 package main
 
 import (
-	"os"
-	"github.com/olekukonko/tablewriter"
+		"fmt"
+		"dev/pkg/go-primer/npcs"
 )
 
 func main() {
-	data := [][]string{
-			[]string{"Alfred", "15", "10/20", "(10.32, 56.21, 30.25)"},
-			[]string{"Beelzebub", "30", "30/50", "(1,1,1)"},
-			[]string{"Hortense", "21", "80/80", "(1,1,1)"},
-			[]string{"Pokey", "8", "30/40", "(1,1,1)"},
-	}
-	table := tablewriter.NewWriter(os.Stdout)
-	table.SetHeader([]string{"NPC", "Speed", "Power", "Location"})
-	table.AppendBulk(data)
-	table.Render()
+		mob := npcs.NonPlayerCharacter{Name: "Alfred"}
+		fmt.Println(mob)
+	
+		hortense := npcs.NonPlayerCharacter{Name: "Hortense",
+			Loc: npcs.Location{X: 10.0, Y: 10.0, Z: 10.0}}
+		fmt.Println(hortense)
+	
+		fmt.Printf("Alfred is %f units from Hortense.\n",
+			mob.DistanceTo(hortense))
 }

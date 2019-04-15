@@ -1,14 +1,16 @@
-package main
+package treedir
 
 import (
 	"fmt"
 	"io"
+	"sort"
+	"io/ioutil"
 	"os"
 	"path/filepath"
-	"strings"
+	"log"
 )
 
-func dirTree(output io.Writer, currDir string, printFiles bool) error {
+func DirTree(output io.Writer, currDir string, printFiles bool) error {
     recursionPrintService("", output, currDir, printFiles)
     return nil
 }
@@ -77,7 +79,12 @@ func recursionPrintService(prependingString string, output io.Writer, currDir st
     }
 }
 
-func dirTree1(output io.Writer, currDir string, printFiles bool)  error {
+func DirTree1(output io.Writer, currDir string, printFiles bool) error {
+		dirTreeLocal(output, currDir, printFiles)
+		return nil
+}
+
+func dirTreeLocal(output io.Writer, currDir string, printFiles bool)  error {
     fileObj, err := os.Open(currDir)
     if err != nil {
         log.Fatalf("Could not open %s: %s", currDir, err.Error())
@@ -92,7 +99,7 @@ func dirTree1(output io.Writer, currDir string, printFiles bool)  error {
         if file.IsDir() {
             fmt.Fprintf(output, "%s\n", file.Name())
             newDir := filepath.Join(currDir, file.Name())
-            dirTree1(output, newDir, printFiles)
+            dirTreeLocal(output, newDir, printFiles)
         } else if printFiles {
             if file.Size() > 0 {
                 fmt.Fprintf(output, "%s (%vb)\n", file.Name(), file.Size())
@@ -102,17 +109,4 @@ func dirTree1(output io.Writer, currDir string, printFiles bool)  error {
         }
     }
     return nil
-}
-
-func main() {
-	out := os.Stdout
-	if !(len(os.Args) == 2 || len(os.Args) == 3) {
-		panic("usage go run main.go . [-f]")
-	}
-	path := os.Args[1]
-	printFiles := len(os.Args) == 3 && os.Args[2] == "-f"
-	err := dirTree1(out, path, printFiles)
-	if err != nil {
-		panic(err.Error())
-	}
 }
