@@ -2,7 +2,7 @@ package main
 
 import (
 		"fmt"
-		"dev/pkg/go-primer/npcs"
+		"github.com/go-packg/dev/pkg/go-primer/npcs"
 )
 
 func main() {

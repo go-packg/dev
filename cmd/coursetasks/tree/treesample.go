@@ -2,7 +2,7 @@ package main
 
 import (
 	"os"
-	"dev/pkg/coursetasks/tree"
+	"github.com/go-packg/dev/pkg/coursetasks/tree"
 )
 
 func main() {
