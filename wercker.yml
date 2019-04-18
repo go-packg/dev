@@ -21,7 +21,7 @@ build:
   # Steps make up the actions in your pipeline
   # Read more about steps on our dev center:
   # https://devcenter.wercker.com/development/steps/
-  base-path: /go/src/github.com/go-packg/dev
+  base-path: /go/src/github.com/go-packg
   
   steps:
     # Sets the go workspace and places you package
@@ -32,7 +32,7 @@ build:
     - script:
         name: go get
         code: |
-          go get -d
+          go get ./...
 
     # Build the project
     - script:
