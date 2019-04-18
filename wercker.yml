@@ -21,6 +21,8 @@ build:
   # Steps make up the actions in your pipeline
   # Read more about steps on our dev center:
   # https://devcenter.wercker.com/development/steps/
+  base-path: /go/src/github.com/go-packg/dev/cmd/cloudnativego/go-primer/npcs
+  
   steps:
     # Sets the go workspace and places you package
     # at the right place in the workspace tree
@@ -30,7 +32,7 @@ build:
     - script:
         name: go get
         code: |
-          go get github.com/go-packg/dev/...
+          go get -u github.com/go-packg/dev/...
 
     # Build the project
     - script:
