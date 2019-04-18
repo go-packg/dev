@@ -30,7 +30,7 @@ build:
     - script:
         name: go get
         code: |
-          go get github.com/dev/cmd/cloudnativego/go-primer/npcs
+          go get github.com/dev/...
 
     # Build the project
     - script:
