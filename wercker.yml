@@ -26,9 +26,8 @@ build:
   steps:
     # Sets the go workspace and places you package
     # at the right place in the workspace tree
-    
-	- setup-go-workspace:
-	    package-dir: github.com/go-packg/dev/cmd/cloudnativego/go-primer/npcs
+ 	- setup-go-workspace:
+	    package-dir: /go/src/github.com/go-packg/dev/cmd/cloudnativego/go-primer/npcs
 
     # Gets the dependencies
     - script:
