@@ -28,6 +28,10 @@ build:
     # at the right place in the workspace tree
  	- setup-go-workspace:
 	    package-dir: /go/src/github.com/go-packg/dev/cmd/cloudnativego/go-primer/npcs
+    
+	- script:
+        name: env
+        code: env
 
     # Gets the dependencies
     - script:
