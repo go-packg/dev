@@ -30,7 +30,7 @@ build:
     - script:
         name: go get
         code: |
-          go get github.com/dev/...
+          go get github.com/go-packg/dev/...
 
     # Build the project
     - script:
