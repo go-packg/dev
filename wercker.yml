@@ -26,7 +26,7 @@ build:
   steps:
     # Sets the go workspace and places you package
     # at the right place in the workspace tree
-    - setup-go-workspace:
+    #- setup-go-workspace:
 	    
 
     # Gets the dependencies
