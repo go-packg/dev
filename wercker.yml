@@ -29,7 +29,7 @@ build:
     # Sets the go workspace and places you package
     # at the right place in the workspace tree
     - wercker/setup-go-workspace:
-        package-dir: github.com/go-packg/dev/cmd/cloudnativego/go-primer/npcs
+        package-dir: /go/src/github.com/go-packg/dev/cmd/cloudnativego/go-primer/npcs
                 
     # Shows exported vars to child process    
     - script:
@@ -51,9 +51,8 @@ build:
         name: go build
         code: |
           # go build ./...
-          # go build github.com/go-packg/dev/cmd/cloudnativego/go-primer/npcs
-          go build ./...
-                        
+          go build github.com/go-packg/dev/cmd/cloudnativego/go-primer/npcs
+                                  
     # Test the project
     #- script:
     #    name: go test
