@@ -32,8 +32,8 @@ build:
     - script:
         name: go get
         code: |
-          #go get -u github.com/go-packg/dev/pkg/...
-          go get -u  -v ./...
+          # use network to update the named packages
+          go get -u github.com/go-packg/dev/pkg/...
 
     # Build the project
     - script:
