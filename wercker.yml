@@ -44,13 +44,13 @@ build:
           #go get -u github.com/go-packg/dev/pkg/...
           
     - script:
-        name: glide install
+        name: go get
         code: |
-          export GO15VENDOREXPERIMENT=1
-          export GLIDE_VERSION=0.8.3
-          curl -LO https://github.com/Masterminds/glide/releases/download/${GLIDE_VERSION}/glide-${GLIDE_VERSION}-linux-amd64.tar.gz
-          tar -xvzf glide-${GLIDE_VERSION}-linux-amd64.tar.gz
-          ./linux-amd64/glide install --quick     
+          cd $WERCKER_SOURCE_DIR
+            go version
+            go get -u github.com/Masterminds/glide
+            export PATH=$WERCKER_SOURCE_DIR/bin:$PATH
+            glide install  
 
     - wercker/golint:
         exclude: "vendor"
