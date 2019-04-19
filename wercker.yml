@@ -22,7 +22,7 @@ build:
   # Read more about steps on our dev center:
   # https://devcenter.wercker.com/development/steps/
   
-  #base-path: /go/src/github.com/go-packg
+  base-path: /go/src/github.com/go-packg
   steps:
     # Sets the go workspace and places you package
     # at the right place in the workspace tree
@@ -42,7 +42,7 @@ build:
         code: |
           #go build ./...
           go build github.com/go-packg/dev/cmd/cloudnativego/go-primer/npcs
-
+    
     # Test the project
     - script:
         name: go test
