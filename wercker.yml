@@ -25,24 +25,19 @@ build:
   # This is base package location： /$$GOPATH/src/github.com/go-packg
   # base-path: /go/src/github.com/go-packg
   
-  steps:
-    - script:
-        code: |
-          # Change env variable for child process 
-          export WERCKER_SOURCE_DIR="$WERCKER_SOURCE_DIR/go/src/github.com/go-packg/dev/cmd/cloudnativego/go-primer/npcs"
-                    
+  steps:                   
     # Sets the go workspace and places you package
     # at the right place in the workspace tree
     - setup-go-workspace:
-        #package-dir: github.com/go-packg/dev/cmd/cloudnativego/go-primer/npcs
-        package-dir: npcs
-        
+        package-dir: github.com/go-packg/dev/cmd/cloudnativego/go-primer/npcs
+                
     # Shows exported vars to child process    
     - script:
         name: env
         code: env
 
     # Gets the dependencies
+    # Unused: now golint execute all is need
     #- script:
     #    name: go get
     #    code: |
@@ -53,12 +48,12 @@ build:
         exclude: "vendor"
         
     # Build the project
-    #- script:
-    #    name: go build
-    #    code: |
+    - script:
+        name: go build
+        code: |
           # go build ./...
           # go build github.com/go-packg/dev/cmd/cloudnativego/go-primer/npcs
-          #go build
+          go build
               
     # Test the project
     #- script:
