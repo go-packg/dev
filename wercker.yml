@@ -37,13 +37,13 @@ build:
         code: env
 
     # Gets the dependencies
-    - script:
-        name: go get
-        code: |
+    #- script:
+    #    name: go get
+     #   code: |
           # use network to update the named packages
           #go get -u github.com/go-packg/dev/pkg/...
           
-      - script:
+    - script:
         name: glide install
         code: |
           export GO15VENDOREXPERIMENT=1
