@@ -22,19 +22,19 @@ build:
   # Read more about steps on our dev center:
   # https://devcenter.wercker.com/development/steps/
   
-  base-path: /go/src/github.com/go-packg
+  #base-path: /go/src/github.com/go-packg
   steps:
     # Sets the go workspace and places you package
     # at the right place in the workspace tree
     - setup-go-workspace:
-        package-dir: github.com/go-packg/dev/cmd
+        package-dir: github.com/go-packg/dev/cmd/cloudnativego/go-primer/npcs
 
     # Gets the dependencies
     - script:
         name: go get
         code: |
           # use network to update the named packages
-          go get -u github.com/go-packg/dev/pkg/...
+          #go get -u github.com/go-packg/dev/pkg/...
 
     # Build the project
     - script:
