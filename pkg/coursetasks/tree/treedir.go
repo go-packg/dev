@@ -10,7 +10,7 @@ import (
 	"log"
 )
 
-// Get directories tree
+// DirTree - directories managemant tool
 func DirTree(output io.Writer, currDir string, printFiles bool) error {
     recursDir("", output, currDir, printFiles)
     return nil
@@ -80,7 +80,7 @@ func recursDir(inputDir string, output io.Writer, currDir string, printFiles boo
     }
 }
 
-// Get directories tree. Simplest version.
+// DirTreeSimple simple DirTree version 
 func DirTreeSimple(output io.Writer, currDir string, printFiles bool) error {
 		dirTreeLocal(output, currDir, printFiles)
 		return nil
