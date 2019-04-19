@@ -52,9 +52,8 @@ build:
         name: go build
         code: |
           # go build ./...
-          # go build github.com/go-packg/dev/cmd/cloudnativego/go-primer/npcs
-          go build
-              
+          go build github.com/go-packg/dev/cmd/cloudnativego/go-primer/npcs
+                        
     # Test the project
     #- script:
     #    name: go test
