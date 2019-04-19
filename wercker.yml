@@ -28,21 +28,24 @@ build:
   steps:
     - script:
         code: |
+          # Change env variable for child process 
           export WERCKER_SOURCE_DIR="$WERCKER_SOURCE_DIR/go/src/github.com/go-packg/dev/cmd/cloudnativego/go-primer/npcs"
                     
     # Sets the go workspace and places you package
     # at the right place in the workspace tree
     - setup-go-workspace:
-        package-dir: github.com/go-packg/dev/cmd/cloudnativego/go-primer/npcs
+        # package-dir: github.com/go-packg/dev/cmd/cloudnativego/go-primer/npcs
+        package-dir: npcs
         
+    # Shows exported vars to child process    
     - script:
         name: env
         code: env
 
     # Gets the dependencies
-    - script:
-        name: go get
-        code: |
+    #- script:
+    #    name: go get
+    #    code: |
           # use network to update the named packages
           # go get -u github.com/go-packg/dev/pkg/...
 
