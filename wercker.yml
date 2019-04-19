@@ -22,7 +22,7 @@ build:
   # Read more about steps on our dev center:
   # https://devcenter.wercker.com/development/steps/
   
-  # This is base package location： /$$GOPATH/src/github.com/go-packg
+  # This is base package location /$GOPATH/src/github.com/go-packg
   # base-path: /go/src/github.com/go-packg
   
   steps:                   
