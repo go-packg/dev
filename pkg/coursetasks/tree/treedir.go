@@ -10,6 +10,7 @@ import (
 	"log"
 )
 
+// Get directories tree
 func DirTree(output io.Writer, currDir string, printFiles bool) error {
     recursDir("", output, currDir, printFiles)
     return nil
@@ -27,7 +28,7 @@ func recursDir(inputDir string, output io.Writer, currDir string, printFiles boo
         log.Fatalf("Could not read dir names in %s: %s", currDir, err.Error())
     }
     var filesMap map[string]os.FileInfo = map[string]os.FileInfo{}
-    var unSortedFilesNameArr []string = []string{}
+    var unSortedFilesNameArr = []string{}
     for _, file := range files {
         unSortedFilesNameArr = append(unSortedFilesNameArr, file.Name())
         filesMap[file.Name()] = file
@@ -79,6 +80,7 @@ func recursDir(inputDir string, output io.Writer, currDir string, printFiles boo
     }
 }
 
+// Get directories tree. Simplest version.
 func DirTreeSimple(output io.Writer, currDir string, printFiles bool) error {
 		dirTreeLocal(output, currDir, printFiles)
 		return nil
