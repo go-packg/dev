@@ -41,7 +41,7 @@ build:
         name: go get
         code: |
           # use network to update the named packages
-          go get -u github.com/go-packg/dev/pkg/...
+          #go get -u github.com/go-packg/dev/pkg/...
 
     - wercker/golint:
         exclude: "vendor"
