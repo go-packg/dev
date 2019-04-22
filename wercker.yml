@@ -73,16 +73,16 @@ build:
         code: |
            cp -R ./ ${WERCKER_OUTPUT_DIR}
            
- deploy:
-  steps:
-    - internal/docker-push:
-        username: $DOCKER_USERNAME
-        password: $DOCKER_PASSWORD
-        cmd: /pipeline/source/hello
-        port: "8080"
-        tag: latest
-        repository: valerizimin/dockerhub
-        registry: https://registry.hub.docker.com
+# deploy:
+#  steps:
+#    - internal/docker-push:
+#        username: $DOCKER_USERNAME
+#        password: $DOCKER_PASSWORD
+#        cmd: /pipeline/source/hello
+#        port: "8080"
+#        tag: latest
+#        repository: valerizimin/dockerhub
+#        registry: https://registry.hub.docker.com
     
 #    - cng/cf-deploy:
 #        api: $API
