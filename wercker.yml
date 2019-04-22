@@ -84,6 +84,10 @@ deploy:
         tag: latest
         repository: valerizimin/dockerhub
         registry: https://registry.hub.docker.com
+        
+    - script:
+        name: container
+        code: echo "container successfully created"
 #
 #    - cng/cf-deploy:
 #        api: $API
