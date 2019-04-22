@@ -66,11 +66,12 @@ build:
     - script:
         name: go test
         code: |
-           go test ./...          
-#    - script:
-#        name: copy files to wercker output
-#        code: |
-#           cp -R ./ ${WERCKER_OUTPUT_DIR}
+           go test ./...
+
+    - script:
+        name: copy files to wercker output
+        code: |
+           cp -R ./ ${WERCKER_OUTPUT_DIR}
 
 # deploy:
 #  steps:
