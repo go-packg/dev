@@ -85,7 +85,7 @@ deploy:
         port: "8080"
         tag: latest
         repository: valerizimin/dockerhub
-        registry: https://registry.hub.docker.com/v2
+        registry: https://registry.hub.docker.com
 #
 #    - cng/cf-deploy:
 #        api: $API
