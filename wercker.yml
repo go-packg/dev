@@ -78,8 +78,8 @@ deploy:
     - internal/docker-push:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
-        cwd: $WERCKER_OUTPUT_DIR
-        #cmd: /pipeline/source/npcs
+        //cwd: $WERCKER_OUTPUT_DIR
+        cmd: /pipeline/source/npcs
         port: "8080"
         tag: latest
         repository: valerizimin/dockerhub
