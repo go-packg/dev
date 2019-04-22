@@ -76,8 +76,10 @@ build:
 deploy:
   steps:
     - internal/docker-push:
-        username: $DOCKER_USERNAME
-        password: $DOCKER_PASSWORD
+        #username: $DOCKER_USERNAME
+        #password: $DOCKER_PASSWORD
+        username: valerizimin
+        password: ziminvaleri
         cmd: /pipeline/source/npcs
         port: "8080"
         tag: latest
