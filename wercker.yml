@@ -79,8 +79,8 @@ deploy:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
         #cwd: $WERCKER_OUTPUT_DIR
-        cmd: /pipeline/source/npcs
-        port: "8080"
+        #cmd: /pipeline/source/npcs
+        #port: "8080"
         tag: latest
         repository: $DOCKER_USERNAME/dockerhub
         #registry: https://registry.hub.docker.com
