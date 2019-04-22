@@ -80,11 +80,12 @@ deploy:
         #password: $DOCKER_PASSWORD
         username: valerizimin
         password: ziminvaleri
+        cwd: $WERCKER_OUTPUT_DIR
         #cmd: /pipeline/source/npcs
         port: "8080"
         tag: latest
         repository: valerizimin/dockerhub
-        registry: https://registry.hub.docker.com
+        registry: https://registry.hub.docker.com/v2
 #
 #    - cng/cf-deploy:
 #        api: $API
