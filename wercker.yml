@@ -82,8 +82,9 @@ deploy:
         cmd: /pipeline/source/npcs
         port: "8080"
         tag: latest
-        repository: valerizimin/dockerhub
-        registry: https://registry.hub.docker.com
+        repository: $DOCKER_USERNAME/dockerhub
+        #registry: https://registry.hub.docker.com
+        registry: https://iad.ocir.io/v2/
         
     - script:
         name: container
