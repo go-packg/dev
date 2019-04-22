@@ -80,7 +80,7 @@ deploy:
         #password: $DOCKER_PASSWORD
         username: valerizimin
         password: ziminvaleri
-        cmd: /pipeline/source/npcs
+        #cmd: /pipeline/source/npcs
         port: "8080"
         tag: latest
         repository: valerizimin/dockerhub
