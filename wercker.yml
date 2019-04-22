@@ -76,10 +76,8 @@ build:
 deploy:
   steps:
     - internal/docker-push:
-        #username: $DOCKER_USERNAME
-        #password: $DOCKER_PASSWORD
-        username: valerizimin
-        password: ziminvaleri
+        username: $DOCKER_USERNAME
+        password: $DOCKER_PASSWORD
         cwd: $WERCKER_OUTPUT_DIR
         #cmd: /pipeline/source/npcs
         port: "8080"
