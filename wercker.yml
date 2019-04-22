@@ -78,7 +78,7 @@ deploy:
     - internal/docker-push:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
-        cmd: /pipeline/source/hello
+        cmd: /pipeline/source/npcs
         port: "8080"
         tag: latest
         repository: valerizimin/dockerhub
@@ -90,5 +90,5 @@ deploy:
         password: $PASSWORD
         org: $ORG
         space: $SPACE
-        appname: wercker-step-hello
+        appname: wercker-step-npcs
         docker_image: valerizimin/dockerhub
