@@ -30,7 +30,17 @@ build:
     # at the right place in the workspace tree
     - wercker/setup-go-workspace:
         package-dir: github.com/go-packg/dev/
-                
+
+    # Activate Go modules inside $GOPATH (Add this to your ~/.bash_profile or ~/.bashrc file)
+    - script:
+        name: activate go modules 
+        code: export GO111MODULE=on            
+    
+    # Init go modules
+    - script:
+        name: go module init
+        code: go mod init        
+    
     # Shows exported vars to child process    
     - script:
         name: env
@@ -82,7 +92,7 @@ deploy:
         port: "8080"
         tag: latest
         repository: $DOCKER_USERNAME/dockerhub
-        # registry: https://registry.hub.docker.com
+        registry: https://registry.hub.docker.com
 
 #
 #    - cng/cf-deploy:
