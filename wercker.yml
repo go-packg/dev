@@ -75,7 +75,7 @@ build:
        
     - script:
         name: ls npcs
-        code: echo ./
+        code: ls ./
 
 deploy:
   steps:
