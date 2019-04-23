@@ -47,21 +47,13 @@ build:
         code: env
 
     # Gets the dependencies
-    #- script:
-    #    name: go get
-     #   code: |
-          # use network to update the named packages
-          #go get -u github.com/go-packg/dev/pkg/...
+    - script:
+        name: go get
+        code: |
+          # get dependencies
+          dep ensure -update
           
-    #- script:
-    #    name: go get
-    #    code: |
-    #      cd $WERCKER_SOURCE_DIR
-    #        go version
-    #        go get -u github.com/Masterminds/glide
-    #        export PATH=$WERCKER_SOURCE_DIR/bin:$PATH
-    #        glide install  
-
+          
     - wercker/golint:
         exclude: "vendor"
         
@@ -70,7 +62,7 @@ build:
         name: go build
         code: |
           # go build ./...
-          go build github.com/go-packg/dev/cmd/cloudnativego/go-primer/npcs
+          go build github.com/go-packg/dev/cmd/msvc/impl/msvc1
                                   
     # Test the project
     - script:
@@ -88,7 +80,7 @@ deploy:
     - internal/docker-push:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
-        cmd: ${WERCKER_OUTPUT_DIR}/npcs
+        cmd: ${WERCKER_OUTPUT_DIR}/msvc1
         port: "8080"
         tag: latest
         repository: $DOCKER_USERNAME/dockerhub
