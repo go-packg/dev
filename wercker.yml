@@ -74,6 +74,7 @@ deploy:
   steps:
   
     # This deploys to DockerHub
+    # Use this: curl http://192.168.99.100?name=Valeri
     - internal/docker-push:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
