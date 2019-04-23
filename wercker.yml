@@ -72,7 +72,7 @@ build:
         code: |
            ${WERCKER_OUTPUT_DIR}/msvc1
 
-deploy:
+# deploy:
   steps:
     - internal/docker-push:
         username: $DOCKER_USERNAME
