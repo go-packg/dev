@@ -76,10 +76,6 @@ build:
     - script:
         name: ls npcs
         code: echo ./ ${WERCKER_OUTPUT_DIR} / npcs
-        
-     - script:
-        name: ls pipeline output npcs
-        code: echo /pipeline/output/npcs
 
 deploy:
   steps:
