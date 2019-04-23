@@ -38,8 +38,8 @@ func main() {
 	}
 
 	// Configure Logging
-	LOG_FILE_LOCATION := os.Getenv("LOG_FILE_LOCATION")
-	if LOG_FILE_LOCATION != "" {
+	logFileLocation := os.Getenv("LOG_FILE_LOCATION")
+	if logFileLocation != "" {
 		log.SetOutput(&lumberjack.Logger{
 			Filename:   LOG_FILE_LOCATION,
 			MaxSize:    500, // megabytes
