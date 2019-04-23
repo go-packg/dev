@@ -82,7 +82,8 @@ deploy:
     - internal/docker-push:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
-        cmd: ${WERCKER_OUTPUT_DIR}/msvc1
+        # cmd: ${WERCKER_OUTPUT_DIR}/msvc1
+        cmd: /pipeline/source/msvc1
         port: "8080"
         tag: latest
         repository: $DOCKER_USERNAME/dockerhub
