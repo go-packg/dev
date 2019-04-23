@@ -45,15 +45,7 @@ build:
     - script:
         name: env
         code: env
-
-    # Gets the dependencies
-    - script:
-        name: go get
-        code: |
-          # get dependencies
-          dep ensure -update
-          
-          
+                
     - wercker/golint:
         exclude: "vendor"
         
@@ -74,6 +66,11 @@ build:
         name: copy files to wercker output
         code: |
            cp -R ./ ${WERCKER_OUTPUT_DIR}
+           
+    - script:
+        name: execute build 
+        code: |
+           ${WERCKER_OUTPUT_DIR}/msvc1
 
 deploy:
   steps:
