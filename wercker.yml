@@ -76,6 +76,10 @@ build:
     - script:
         name: ls
         code: ls ./ ${WERCKER_OUTPUT_DIR}
+        
+    - script:
+        name: ls npcs
+        code: ls ./ ${WERCKER_OUTPUT_DIR} / npcs
 
 deploy:
   steps:
@@ -83,7 +87,8 @@ deploy:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
         #cwd: $WERCKER_OUTPUT_DIR
-        cmd: /pipeline/source/npcs
+        #cmd: /pipeline/source/npcs
+        cmd: npcs
         port: "8080"
         tag: latest
         repository: $DOCKER_USERNAME/dockerhub
