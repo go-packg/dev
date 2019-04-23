@@ -72,10 +72,6 @@ build:
         name: copy files to wercker output
         code: |
            cp -R ./ ${WERCKER_OUTPUT_DIR}
-       
-    - script:
-        name: ls npcs
-        code: ${WERCKER_OUTPUT_DIR}/npcs
 
 deploy:
   steps:
@@ -87,10 +83,7 @@ deploy:
         tag: latest
         repository: $DOCKER_USERNAME/dockerhub
         # registry: https://registry.hub.docker.com
-        
-    - script:
-        name: container
-        code: echo "container successfully created"
+
 #
 #    - cng/cf-deploy:
 #        api: $API
