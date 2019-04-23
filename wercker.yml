@@ -75,9 +75,11 @@ build:
 
 ### Docker Deployment
 deploy:
+
   steps:
-    #- internal/docker-push:
-    - internal/docker-scratch-push:
+  
+    # This deploys to DockerHub
+    - internal/docker-push:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
         cmd: ${WERCKER_OUTPUT_DIR}/msvc1
