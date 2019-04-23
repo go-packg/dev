@@ -75,7 +75,7 @@ build:
        
     - script:
         name: ls npcs
-        code: echo ./ ${WERCKER_OUTPUT_DIR} / npcs
+        code: echo ${WERCKER_OUTPUT_DIR} / npcs
 
 deploy:
   steps:
