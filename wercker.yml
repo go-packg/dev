@@ -75,7 +75,7 @@ build:
            
     - script:
         name: ls
-        code: ls
+        code: ls ./ ${WERCKER_OUTPUT_DIR}
 
 deploy:
   steps:
