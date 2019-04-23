@@ -72,8 +72,8 @@ build:
         code: |
            ${WERCKER_OUTPUT_DIR}/msvc1
 
-deploy:
-  steps:
+#deploy:
+#  steps:
     - internal/docker-push:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
