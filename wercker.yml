@@ -72,14 +72,14 @@ build:
         name: copy files to wercker output
         code: |
            cp -R ./ ${WERCKER_OUTPUT_DIR}
-           
-    - script:
-        name: ls
-        code: ls ./ ${WERCKER_OUTPUT_DIR}
-        
+       
     - script:
         name: ls npcs
-        code: ls ./ ${WERCKER_OUTPUT_DIR} / npcs
+        code: echo ./ ${WERCKER_OUTPUT_DIR} / npcs
+        
+     - script:
+        name: ls /pipeline/output/npcs
+        code: echo /pipeline/output/npcs
 
 deploy:
   steps:
@@ -87,7 +87,7 @@ deploy:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
         #cwd: $WERCKER_OUTPUT_DIR
-        #cmd: /pipeline/source/npcs
+        cmd: /pipeline/output/npcs
         cmd: npcs
         port: "8080"
         tag: latest
