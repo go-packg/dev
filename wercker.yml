@@ -87,7 +87,7 @@ deploy:
         port: "8080"
         tag: latest
         repository: $DOCKER_USERNAME/dockerhub
-        registry: https://registry.hub.docker.com
+        # registry: https://registry.hub.docker.com
         
     - script:
         name: container
