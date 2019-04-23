@@ -6,10 +6,10 @@ FROM golang:1.11
 LABEL maintainer="Valeri Zimin"
 
 # Set the Current Working Directory inside the container
-WORKDIR $GOPATH/src/github.com/go-packg/dev/cmd/cloudnativego/go-primer/npcs
+WORKDIR $GOPATH/src/github.com/go-packg/dev/cmd/msvc/impl/msvc1
 
 # Copy the local package files to the container's workspace.
-# ADD . /go/src/github.com/go-packg/dev/cmd/cloudnativego/go-primer/npcs
+# ADD . /go/src/github.com/go-packg/dev/cmd/msvc/impl/msvc1
 
 # Copy everything from the current directory to the PWD(Present Working Directory) inside the container
 COPY . .
@@ -21,7 +21,7 @@ RUN go get -d -v ./...
 # Build the npcs command inside the container.
 # (You may fetch or manage dependencies here,
 # either manually or with a tool like "godep".)
-# RUN go install github.com/go-packg/dev/cmd/cloudnativego/go-primer/npcs
+# RUN go install /github.com/go-packg/dev/cmd/msvc/impl/msvc1
 
 # Install the package
 RUN go install -v ./...
@@ -31,7 +31,7 @@ RUN go install -v ./...
 EXPOSE 8080
 
 # Run the npcs command by default when the container starts.
-# ENTRYPOINT /go/bin/npcs
+# ENTRYPOINT /go/bin/msvc1
 
 # Run the executable
-CMD ["npcs"]
+CMD ["msvc1"]
