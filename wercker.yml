@@ -54,7 +54,7 @@ build:
         name: go build
         code: |
           # go build ./...
-          go build github.com/go-packg/dev/cmd/msvc/impl/msvc1
+          go build github.com/go-packg/dev/cmd/msvc/impl/router
                                   
     # Test the project
     - script:
@@ -66,12 +66,12 @@ build:
         name: copy files to wercker output
         code: |
            #cp -R ./ ${WERCKER_OUTPUT_DIR}
-           cp msvc1 ${WERCKER_OUTPUT_DIR}
+           cp router ${WERCKER_OUTPUT_DIR}
            
     - script:
         name: execute build 
         code: |
-           ${WERCKER_OUTPUT_DIR}/msvc1
+           ${WERCKER_OUTPUT_DIR}/router
 
 ### Docker Deployment
 deploy:
@@ -82,18 +82,8 @@ deploy:
     - internal/docker-push:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
-        # cmd: ${WERCKER_OUTPUT_DIR}/msvc1
-        cmd: /pipeline/source/msvc1
+        cmd: /pipeline/source/router
         port: "8080"
         tag: latest
         repository: $DOCKER_USERNAME/dockerhub
         registry: https://registry.hub.docker.com
-
-#    - cng/cf-deploy:
-#        api: $API
-#        user: $USER
-#        password: $PASSWORD
-#        org: $ORG
-#        space: $SPACE
-#        appname: wercker-step-npcs
-#        docker_image: valerizimin/dockerhub
