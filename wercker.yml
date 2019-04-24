@@ -54,7 +54,7 @@ build:
         name: go build
         code: |
           # go build ./...
-          go build github.com/go-packg/dev/cmd/msvc/impl/router
+          go build github.com\go-packg\dev\cmd\msvc\impl\gogo
                                   
     # Test the project
     - script:
