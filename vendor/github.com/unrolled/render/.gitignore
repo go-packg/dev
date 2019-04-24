@@ -20,5 +20,8 @@ _cgo_export.*
 _testmain.go
 
 *.exe
-vendor
-Godeps
+*.test
+
+
+*.pem
+.DS_Store
