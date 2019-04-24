@@ -1,6 +1,6 @@
 package npcs
 
 import (
-		"fmt"
-		"math"
+		_ "fmt"
+		_ "math"
 )
