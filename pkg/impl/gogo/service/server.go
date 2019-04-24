@@ -19,10 +19,10 @@ func NewServer() *negroni.Negroni {
 	mx := mux.NewRouter()
 	
 	initRoutes(mx, formatter)
-
+	
 	n.UseHandler(mx)
 	return n
-}
+}	
 
 func initRoutes(mx *mux.Router, formatter *render.Render) {
 	mx.HandleFunc("/test", testHandler(formatter)).Methods("GET")
