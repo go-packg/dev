@@ -54,7 +54,7 @@ build:
         name: go build
         code: |
           # go build ./...
-          go build github.com/go-packg/dev/cmd/msvc/impl/gogo
+          go build github.com/go-packg/dev/cmd/msvc/impl/gogo-service
                                   
     # Test the project
     - script:
@@ -66,7 +66,7 @@ build:
         name: copy files to wercker output
         code: |
            #cp -R ./ ${WERCKER_OUTPUT_DIR}
-           cp router ${WERCKER_OUTPUT_DIR}
+           cp gogo-service ${WERCKER_OUTPUT_DIR}
 
 ### Docker Deployment
 deploy:
@@ -74,11 +74,10 @@ deploy:
   steps:
   
     # This deploys to DockerHub
-    # Use this: curl http://192.168.99.100?name=Valeri
     - internal/docker-push:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
-        cmd: /pipeline/source/router
+        cmd: /pipeline/source/gogo-service
         port: "8080"
         tag: latest
         repository: $DOCKER_USERNAME/dockerhub
