@@ -10,6 +10,14 @@
   version = "v1.18.0"
 
 [[projects]]
+  branch = "master"
+  digest = "1:f9b8b077a22efe298d67a0004592e8800c6b0bfdaa9f8439065ddbefdbc17e2a"
+  name = "github.com/go-packg/dev"
+  packages = ["pkg/coursetasks/tree"]
+  pruneopts = "UT"
+  revision = "d36b3b6b41ff233e20af8fb007b77343fa72b81c"
+
+[[projects]]
   digest = "1:d5f97fc268267ec1b61c3453058c738246fc3e746f14b1ae25161513b7367b0c"
   name = "github.com/gorilla/mux"
   packages = ["."]
@@ -38,6 +46,7 @@
   analyzer-version = 1
   input-imports = [
     "github.com/cloudfoundry-community/go-cfenv",
+    "github.com/go-packg/dev/pkg/coursetasks/tree",
     "github.com/gorilla/mux",
     "gopkg.in/natefinch/lumberjack.v2",
   ]

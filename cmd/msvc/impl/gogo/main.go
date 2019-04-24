@@ -5,7 +5,7 @@ import (
 	"os"
 
 	"github.com/cloudfoundry-community/go-cfenv"
-	// service "github.com/cloudnativego/gogo-service/service"
+	//service "github.com/cloudnativego/gogo-service/service"
 )
 
 func main() {
@@ -14,11 +14,12 @@ func main() {
 		port = "3000"
 	}
 
-	appEnv, err := cfenv.Current()
+	//appEnv, err := cfenv.Current()
+	_, err := cfenv.Current()
 	if err != nil {
 		fmt.Println("CF Environment not detected.")
 	}
-
+    
 	//server := service.NewServer(appEnv)
 	//server.Run(":" + port)
 }
