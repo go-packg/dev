@@ -6,9 +6,14 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/http/httptest"
+	"strings"
 	"testing"
 
 	"github.com/unrolled/render"
+)
+
+const (
+	fakeMatchLocationResult = "/matches/5a003b78-409e-4452-b456-a6f0dcee05bd"
 )
 
 var (
@@ -44,6 +49,18 @@ func TestCreateMatch(t *testing.T) {
 
 	if res.StatusCode != http.StatusCreated {
 		t.Errorf("Expected response status 201, received %s", res.Status)
+	}
+
+	loc, headerOk := res.Header["Location"]
+	if !headerOk {
+		t.Error("Location header is not set")
+	} else {
+		if !strings.Contains(loc[0], "/matches/") {
+			t.Errorf("Location header should contain '/matches/'")
+		}
+		if len(loc[0]) != len(fakeMatchLocationResult) {
+			t.Errorf("Location value does not contain guid of new match")
+		}
 	}
 
 	fmt.Printf("Payload: %s", string(payload))
