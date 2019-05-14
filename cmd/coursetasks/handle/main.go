@@ -29,21 +29,22 @@ type myHandler struct {
 	// ...
 }
 
+func (h myHandler) test(res http.ResponseWriter, req *http.Request) {
+	io.WriteString(res, "<H1>My name is Valeri/ It's a test!</H1>")
+}
+
 func (h myHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte(`hello world`))
-	io.WriteString(w, "<H1>>My name is Valeri!</H1>")
+	h.test(w, r)
 }
 
 func logchain(h http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		log.Println("Before")
-		h.ServeHTTP(w, r) // call original
+		io.WriteString(w, "<H1>Log::Before</H1>")
+		h.ServeHTTP(w, r)
+		io.WriteString(w, "<H1>Log::After</H1>")
 		log.Println("After")
 	})
-}
-
-func test(res http.ResponseWriter, req *http.Request) {
-	io.WriteString(res, "<H1>My name is Valeri/ It's a test!</H1>")
 }
 
 func main() {
@@ -55,6 +56,6 @@ func main() {
 	//mux.Handle("/me/", http.HandlerFunc(me))
 	//http.Handle("/me/", myHandler{})
 	mux.Handle("/me/", myHandler{})
-	mux.Handle("/test/", logchain(test))
+	mux.Handle("/test/", logchain(myHandler{}))
 	http.ListenAndServe(":8080", mux)
 }
