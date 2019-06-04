@@ -56,7 +56,9 @@ func CreateMatchRespondsToBadData(t *testing.T) {
 	}
 	req2.Header.Add("Content-Type", "application/json")
 	res2, _ := client.Do(req2)
-	defer res2.Body.Close()
+	if res2 != nil {
+		defer res2.Body.Close()
+	}
 	if res2.StatusCode != http.StatusBadRequest {
 		t.Error("Sending valid JSON but with incorrect or missing fields should result in a bad request and didn't.")
 	}

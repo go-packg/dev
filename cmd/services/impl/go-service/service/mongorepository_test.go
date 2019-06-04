@@ -1,7 +1,7 @@
 package service
 
 import (
-	"dev/cmd/services/impl/go-service/service/fakes"
+	"dev/cmd/services/impl/go-service/fakes"
 	"testing"
 
 	"github.com/cloudnativego/cfmgo"

@@ -17,13 +17,13 @@ type mongoMatchRepository struct {
 
 type matchRecord struct {
 	RecordID    bson.ObjectId `bson:"_id,omitempty" json:"id"`
-	MatchID     string        `bson:"match_id",json:"match_id"`
-	TurnCount   int           `bson:"turn_count",json:"turn_count"`
-	GridSize    int           `bson:"grid_size",json:"grid_size"`
-	StartTime   string        `bson:"start_time",json:"start_time"`
-	GameBoard   [][]byte      `bson:"game_board",json:"game_board"`
-	PlayerBlack string        `bson:"player_black",json:"player_black"`
-	PlayerWhite string        `bson:"player_white",json:"player_white"`
+	MatchID     string        `bson:"match_id" json:"match_id"`
+	TurnCount   int           `bson:"turn_count" json:"turn_count"`
+	GridSize    int           `bson:"grid_size" json:"grid_size"`
+	StartTime   string        `bson:"start_time" json:"start_time"`
+	GameBoard   [][]byte      `bson:"game_board" json:"game_board"`
+	PlayerBlack string        `bson:"player_black" json:"player_black"`
+	PlayerWhite string        `bson:"player_white" json:"player_white"`
 }
 
 func newMongoMatchRepository(col cfmgo.Collection) (repo *mongoMatchRepository) {
