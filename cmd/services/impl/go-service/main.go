@@ -1,11 +1,11 @@
 package main
 
 import (
+	service "dev/cmd/services/impl/go-service/service"
 	"fmt"
 	"os"
 
 	"github.com/cloudfoundry-community/go-cfenv"
-	service "github.com/cloudnativego/gogo-service/service"
 )
 
 func main() {
