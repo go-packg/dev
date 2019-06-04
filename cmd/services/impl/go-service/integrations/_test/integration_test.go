@@ -2,6 +2,7 @@ package integrations_test
 
 import (
 	"bytes"
+	. "dev/cmd/services/impl/go-service/service"
 	"encoding/json"
 	"fmt"
 	"net/http"
@@ -9,7 +10,6 @@ import (
 	"testing"
 
 	"github.com/cloudfoundry-community/go-cfenv"
-	. "github.com/cloudnativego/gogo-service/service"
 )
 
 var (

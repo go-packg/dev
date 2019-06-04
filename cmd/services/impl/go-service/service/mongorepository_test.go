@@ -1,11 +1,11 @@
 package service
 
 import (
+	"dev/cmd/services/impl/go-service/service/fakes"
 	"testing"
 
 	"github.com/cloudnativego/cfmgo"
 	"github.com/cloudnativego/gogo-engine"
-	"github.com/cloudnativego/gogo-service/fakes"
 )
 
 var (
