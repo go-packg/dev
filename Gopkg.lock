@@ -2,12 +2,63 @@
 
 
 [[projects]]
+  digest = "1:00e6c96836e445755d954570d5b3c9cb2f281dee55be065016c64f105f9d6e96"
+  name = "github.com/cloudfoundry-community/go-cfenv"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "20ea9de4dd5d3e052f2df72aab439453d7445f31"
+  version = "v1.18.0"
+
+[[projects]]
+  branch = "master"
+  digest = "1:7532efa1d8eb4f6b96326e592b60a53e0b1ec9f8416cc278879539e13ecadb08"
+  name = "github.com/cloudnativego/cf-tools"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "f59655db37a9fbf2c5cf9095211b9950ff2dab24"
+
+[[projects]]
+  branch = "master"
+  digest = "1:768e529bcbd74c0006fb00e748db422f4537ff52d8c7d24507f0c6eb1961da62"
+  name = "github.com/cloudnativego/cfmgo"
+  packages = [
+    ".",
+    "params",
+  ]
+  pruneopts = "UT"
+  revision = "35605f2df87ae242b8c1fdef3c7ebc07916e339b"
+
+[[projects]]
+  branch = "master"
+  digest = "1:d6bd025b14aa9b06d6e62d282e21c30f9df27d70eda6aa7d1ad3a432d645c717"
+  name = "github.com/cloudnativego/gogo-engine"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "256cb157fb61886eada3c2ec613fbb4428f5ca3f"
+
+[[projects]]
   digest = "1:d688f4ad71b5dfad95c2d74cb0feac09f8f3c32ae5cecc078230dbdeece39e53"
   name = "github.com/codegangsta/negroni"
   packages = ["."]
   pruneopts = "UT"
   revision = "c6a59be0ce122566695fbd5e48a77f8f10c8a63a"
   version = "v1.0.0"
+
+[[projects]]
+  branch = "master"
+  digest = "1:f9b8b077a22efe298d67a0004592e8800c6b0bfdaa9f8439065ddbefdbc17e2a"
+  name = "github.com/go-packg/dev"
+  packages = ["pkg/coursetasks/tree"]
+  pruneopts = "UT"
+  revision = "4cb7723246dfc1f4904e21398df2181e824f4ef0"
+
+[[projects]]
+  digest = "1:582b704bebaa06b48c29b0cec224a6058a09c86883aaddabde889cd1a5f73e1b"
+  name = "github.com/google/uuid"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "0cd6bf5da1e1c83f8b45653022c74f71af0538a4"
+  version = "v1.1.1"
 
 [[projects]]
   digest = "1:d5f97fc268267ec1b61c3453058c738246fc3e746f14b1ae25161513b7367b0c"
@@ -18,12 +69,42 @@
   version = "v1.7.1"
 
 [[projects]]
+  digest = "1:53bc4cd4914cd7cd52139990d5170d6dc99067ae31c56530621b18b35fc30318"
+  name = "github.com/mitchellh/mapstructure"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "3536a929edddb9a5b34bd6861dc4a9647cb459fe"
+  version = "v1.1.2"
+
+[[projects]]
+  digest = "1:e5d0bd87abc2781d14e274807a470acd180f0499f8bf5bb18606e9ec22ad9de9"
+  name = "github.com/pborman/uuid"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "adf5a7427709b9deb95d29d3fa8a2bf9cfd388f1"
+  version = "v1.2"
+
+[[projects]]
   digest = "1:d81a708124c38e074fd655f8e9e9218e9461eb208cf23d787b58b193fd3547af"
   name = "github.com/unrolled/render"
   packages = ["."]
   pruneopts = "UT"
   revision = "449f3985007486f7f42ca7f62b4c8b45d6d89cbf"
   version = "v1.0.0"
+
+[[projects]]
+  branch = "v2"
+  digest = "1:988de7520a09024d5d94cd99bd545afbf194893994ec759b1cda0a0bbb6adb80"
+  name = "gopkg.in/mgo.v2"
+  packages = [
+    ".",
+    "bson",
+    "internal/json",
+    "internal/sasl",
+    "internal/scram",
+  ]
+  pruneopts = "UT"
+  revision = "9856a29383ce1c59f308dd1cf0363a79b5bef6b5"
 
 [[projects]]
   digest = "1:c805e517269b0ba4c21ded5836019ed7d16953d4026cb7d00041d039c7906be9"
@@ -37,9 +118,17 @@
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
+    "github.com/cloudfoundry-community/go-cfenv",
+    "github.com/cloudnativego/cf-tools",
+    "github.com/cloudnativego/cfmgo",
+    "github.com/cloudnativego/cfmgo/params",
+    "github.com/cloudnativego/gogo-engine",
     "github.com/codegangsta/negroni",
+    "github.com/go-packg/dev/pkg/coursetasks/tree",
     "github.com/gorilla/mux",
     "github.com/unrolled/render",
+    "gopkg.in/mgo.v2",
+    "gopkg.in/mgo.v2/bson",
     "gopkg.in/natefinch/lumberjack.v2",
   ]
   solver-name = "gps-cdcl"
