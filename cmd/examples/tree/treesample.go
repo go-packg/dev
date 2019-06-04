@@ -1,8 +1,8 @@
 package main
 
 import (
+	treedir "dev/pkg/coursetasks/tree"
 	"os"
-	"github.com/go-packg/dev/pkg/coursetasks/tree"
 )
 
 func main() {
